@@ -30,7 +30,7 @@ logPath="/Library/Logs/JamfTrustSignOut.log"
 #Command to write time of last automatic sign out to the log
 logCommand="echo \"Automatically signed out out of Jamf Trust at \$(date +%F\ %T)\" >> $logPath"
 
-#Setting deleteLogsOnInstall to 1 will delete the existing log file if on exists.
+#Setting deleteLogsOnInstall to 1 will delete the existing log file if it exists.
 deleteLogsOnInstall=1
 
 #Name of our Launch Daemon
@@ -59,7 +59,7 @@ if [[ -f $signOutScriptPath ]]; then
 	rm $signOutScriptPath
 fi
 
-if [[ deleteLogsOnInstall = 1]]; then
+if [[ $deleteLogsOnInstall = 1 ]]; then
 	if [[ -f $logPath ]]; then
 		rm $logPath
 	fi
