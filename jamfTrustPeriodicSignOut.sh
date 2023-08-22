@@ -58,9 +58,11 @@ if [[ -f $signOutScriptPath ]]; then
 	rm $signOutScriptPath
 fi
 
-if [[ -f $logPath ]]; then
-	rm $logPath
-fi
+if [[ deleteLogsOnInstall = 1]]; then
+	if [[ -f $logPath ]]; then
+		rm $logPath
+	fi
+else
 
 #Bootout the daemon if its already running
 if [[ $(launchctl list | grep $launchDaemonName) != "" ]]; then

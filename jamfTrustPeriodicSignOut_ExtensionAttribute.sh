@@ -1,7 +1,8 @@
 #!/bin/bash
 
-#To be used in conjunction with Jamf Trust Periodic Extension Script
-#If you changed
+#To be used in conjunction with Jamf Trust Periodic SignOut Script
+
+#If you changed the patch in the Jamf Trust Periodic SignOut Script, you'll need to change the path here to match.
 logPath="/Library/Logs/JamfTrustSignOut.log"
 
 if [[ -f /Library/Logs/JamfTrustSignout.log ]]; then
