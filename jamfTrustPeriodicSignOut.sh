@@ -24,14 +24,14 @@ allowLogging=1
 #Run when the launchDaemon is loaded (when the computer boots). Set to false to only run when triggered.
 runAtLoad=true
 
+#Setting deleteLogsOnInstall to 1 will delete the existing log file if it exists.
+deleteLogsOnInstall=1
+
 #Logs will be saved at logPath. If using lastJamfTrustAutoSignout 
 logPath="/Library/Logs/JamfTrustSignOut.log"
 
 #Command to write time of last automatic sign out to the log
 logCommand="echo \"Automatically signed out out of Jamf Trust at \$(date +%F\ %T)\" >> $logPath"
-
-#Setting deleteLogsOnInstall to 1 will delete the existing log file if it exists.
-deleteLogsOnInstall=1
 
 #Name of our Launch Daemon
 launchDaemonName="com.jamftrust.automateSignOut"
@@ -50,9 +50,9 @@ signOutCommand="open -a \"Jamf Trust\" \"com.jamf.trust://?action=sign_out\""
 echo "Cleaning up old files..."
 
 #Delete launch daemon if it exists
-if [[ -f "$launchDaemonPath.plist" ]];then
+if [[ -f "$launchDaemonPath.plist" ]]; then
 	rm "$launchDaemonPath.plist"
-	fi
+fi
 
 #Delete Sign Out script
 if [[ -f $signOutScriptPath ]]; then
