@@ -7,18 +7,22 @@ removeFromDevice=0
 signOutPeriodiodically=1
 
 #Set the Sign Out Interval Period in Seconds. Default is 8 hours.
-signOutIntervalPeriod=120
+signOutIntervalPeriod=28800
+
 #Signs the device out at the same time each day. If the device is offline during this time, signout will be triggered on each boot
 signOutAtSetTimeDaily=1
 
 #Sign out hour of day (0..23)
-signOutHour=16
+signOutHour=23
 
 #Sign out minute of hour (0..59)
-signOutMinute=30
+signOutMinute=59
 
 #Set allowLogging to 0 to disable logging. 
 allowLogging=1
+
+#Run when the launchDaemon is loaded (when the computer boots). Set to false to only run when triggered.
+runAtLoad=true
 
 #Logs will be saved at logPath. If using lastJamfTrustAutoSignout 
 logPath="/Library/Logs/JamfTrustSignOut.log"
@@ -28,9 +32,6 @@ logCommand="echo \"Automatically signed out out of Jamf Trust at \$(date +%F\ %T
 
 #Setting deleteLogsOnInstall to 1 will delete the existing log file if on exists.
 deleteLogsOnInstall=1
-
-#Run when the launchDaemon is loaded (when the computer boots). Set to false to only run when triggered.
-runAtLoad=false
 
 #Name of our Launch Daemon
 launchDaemonName="com.jamftrust.automateSignOut"

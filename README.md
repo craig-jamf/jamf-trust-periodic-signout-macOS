@@ -42,7 +42,7 @@ When the script is triggered, it initiates a log out of the Jamf Trust applicati
 
 ## Deploying locally
 
-To deploy locally, follow these steps. 
+To deploy locally, follow these steps.
 
 1. Download `jamfTrustPeriodicSignOut.sh` to your local Mac.
 2. Set owner on script (must be root) `chown root:wheel /path/to/jamfTrustPeriodicSignOut.sh`
